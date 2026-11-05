@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The science · Wordhold</title>
+  <meta name="description" content="The studies behind Wordhold: spaced repetition, active recall, FSRS scheduling and learning words in context.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">Wordhold</a>
+      <nav aria-label="Site">
+        <ul>
+        <li><a href="../">Home</a></li>
+        <li><a href="../guides/">Guides</a></li>
+        <li><a href="../science/" aria-current="page">The science</a></li>
+        <li><a href="../support/">Support</a></li>
+        <li><a href="../privacy/">Privacy</a></li>
+        <li><a href="../attribution/">Sources</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <article class="card">
+      <div class="card-head">
+        <p class="callno">OW · 200</p>
+        <h1>The science</h1>
+      </div>
+
+      <p class="lede">Wordhold is built on a few of the best-studied ideas in memory research. This page names the studies.</p>
+      <p><strong>An honest note first:</strong> these studies tested the <em>methods</em>, not this app. Nobody has measured how many words Wordhold readers remember, so we don't make claims like "remember 90% of your words". What we can say is which methods the app uses and where the evidence for them comes from.</p>
+
+      <h2>Spaced repetition: each word comes back just before you'd forget it</h2>
+      <p>Reviewing something spread out over time beats cramming it into one sitting. In a study of more than 1,350 people learning facts, Cepeda and colleagues found that the best gap between study sessions grows with how long you want to remember: the further away the test, the longer the ideal gap. Wordhold spaces every word's reviews further apart each time you remember it.</p>
+
+      <h2>Active recall: test yourself instead of re-reading</h2>
+      <p>Trying to remember something strengthens memory more than reading it again. Rowland's review of 61 studies found a clear benefit of testing over restudying (an average effect size of about g = 0.50). That's why each card shows the word and its sentence first and asks you to recall the meaning before you reveal it.</p>
+
+      <h2>Scheduling by FSRS</h2>
+      <p>FSRS (Free Spaced Repetition Scheduler) is the open-source algorithm used by modern Anki. It models how quickly each memory fades and picks the day each word should come back. It grew out of the research of Ye, Su and Cao, who trained a memory model on millions of real review logs and used it to find review schedules that cost the least effort. Wordhold schedules reviews to aim for about 90% recall.</p>
+
+      <h2>Words in the sentence where you met them</h2>
+      <p>Reading a word in context and studying its definition work better together than either does alone. Bolger, Balass, Landen and Perfetti found that definitions convey meaning better than context alone, and that meeting a word in several different sentences builds a more general sense of it than one repeated sentence. Stahl and Fairbanks' earlier review of vocabulary teaching studies also found that methods combining definitions and context did best. So each card shows your book's sentence alongside the definition, and a second example sentence for variety.</p>
+
+      <h2>More encounters help</h2>
+      <p>Across studies of learning words from reading, Uchihara, Webb and Yanagisawa found that the more often learners met a word, the more likely they were to learn it (a correlation of about r = .34), though the effect varied a lot between studies. Wordhold gives each word repeated, scheduled encounters instead of leaving it to chance.</p>
+
+      <h2>Recalling with the right cue</h2>
+      <p>Memories come back most easily when the cue you have at recall matches what was there when you learned (Tulving and Thomson's encoding specificity principle). Showing the original sentence from your book on the card is a cue that matches the moment you first met the word.</p>
+
+      <h2>What we don't claim</h2>
+      <p>We don't say the app is "scientifically proven", promise a number of words in a number of days, or tailor anything to "learning styles". A major review by Pashler and colleagues found no good evidence that teaching to a person's preferred learning style improves learning.</p>
+
+      <h2>References</h2>
+      <ol class="refs">
+        <li>Bolger, D. J., Balass, M., Landen, E., &amp; Perfetti, C. A. (2008). Context variation and definitions in learning the meanings of words: An instance-based learning approach. <em>Discourse Processes, 45</em>(2), 122–159. <a href="https://doi.org/10.1080/01638530701792826">doi:10.1080/01638530701792826</a></li>
+        <li>Cepeda, N. J., Vul, E., Rohrer, D., Wixted, J. T., &amp; Pashler, H. (2008). Spacing effects in learning: A temporal ridgeline of optimal retention. <em>Psychological Science, 19</em>(11), 1095–1102. <a href="https://doi.org/10.1111/j.1467-9280.2008.02209.x">doi:10.1111/j.1467-9280.2008.02209.x</a></li>
+        <li>Pashler, H., McDaniel, M., Rohrer, D., &amp; Bjork, R. (2008). Learning styles: Concepts and evidence. <em>Psychological Science in the Public Interest, 9</em>(3), 105–119. <a href="https://doi.org/10.1111/j.1539-6053.2009.01038.x">doi:10.1111/j.1539-6053.2009.01038.x</a></li>
+        <li>Rowland, C. A. (2014). The effect of testing versus restudy on retention: A meta-analytic review of the testing effect. <em>Psychological Bulletin, 140</em>(6), 1432–1463. <a href="https://doi.org/10.1037/a0037559">doi:10.1037/a0037559</a></li>
+        <li>Stahl, S. A., &amp; Fairbanks, M. M. (1986). The effects of vocabulary instruction: A model-based meta-analysis. <em>Review of Educational Research, 56</em>(1), 72–110. <a href="https://doi.org/10.3102/00346543056001072">doi:10.3102/00346543056001072</a></li>
+        <li>Tulving, E., &amp; Thomson, D. M. (1973). Encoding specificity and retrieval processes in episodic memory. <em>Psychological Review, 80</em>(5), 352–373. <a href="https://doi.org/10.1037/h0020071">doi:10.1037/h0020071</a></li>
+        <li>Uchihara, T., Webb, S., &amp; Yanagisawa, A. (2019). The effects of repetition on incidental vocabulary learning: A meta-analysis of correlational studies. <em>Language Learning, 69</em>(3), 559–599. <a href="https://doi.org/10.1111/lang.12343">doi:10.1111/lang.12343</a></li>
+        <li>Ye, J., Su, J., &amp; Cao, Y. (2022). A stochastic shortest path algorithm for optimizing spaced repetition scheduling. In <em>Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</em> (pp. 4381–4390). <a href="https://doi.org/10.1145/3534678.3539081">doi:10.1145/3534678.3539081</a></li>
+      </ol>
+      <p class="small">Every reference above was checked against its publisher record (Crossref) on 27 October 2026.</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Wordhold is an iPhone app that teaches you the words you looked up in your own books.</p>
+      <p>Not affiliated with Amazon or Rakuten Kobo. Kindle is a trademark of Amazon.com, Inc. Kobo is a trademark of Rakuten Kobo Inc.</p>
+      <p><a href="../privacy/">Privacy</a> · <a href="../support/">Support</a> · <a href="../attribution/">Sources and licences</a></p>
+    </div>
+  </footer>
+</body>
+</html>

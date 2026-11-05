@@ -1,0 +1,216 @@
+/* Wordhold site. Catalogue-card style from plan section 12:
+   e-ink grey paper, card stock, blue-black ink, bookcloth green.
+   Colours match the app's asset catalogue (Paper, Card, Ink, AccentColor). */
+
+:root {
+  --paper: #e8e7e3;
+  --card: #fbf9f3;
+  --ink: #1c2434;
+  --ink-soft: #4a5263;
+  --rule: #c9c6bd;
+  --rule-red: #b5544a;
+  --cloth: #2f5e44;
+  --todo-bg: #fff4c7;
+  --todo-ink: #5a4500;
+  --todo-rule: #c9a227;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1c1c1b;
+    --card: #2c2c2a;
+    --ink: #e6e7ea;
+    --ink-soft: #b4b7bf;
+    --rule: #4a4a46;
+    --rule-red: #d98378;
+    --cloth: #78b08c;
+    --todo-bg: #3a3214;
+    --todo-ink: #f2dc8a;
+    --todo-rule: #a88a2a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Literata", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.label,
+nav,
+.site-footer,
+.callno,
+figcaption,
+.todo {
+  font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+a { color: var(--cloth); text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.site-header { padding: 1.5rem 0 0.5rem; }
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.9375rem;
+}
+nav a { color: var(--ink-soft); text-decoration: none; }
+nav a:hover, nav a[aria-current="page"] { color: var(--cloth); text-decoration: underline; }
+
+/* The catalogue card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 6px 18px rgba(0, 0, 0, 0.05);
+  margin: 1.25rem 0 2rem;
+  padding: 1.5rem 1.25rem 2rem;
+  position: relative;
+}
+@media (min-width: 640px) {
+  .card { padding: 2rem 2.5rem 2.5rem; }
+}
+.card-head {
+  border-bottom: 2px solid var(--rule-red);
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+}
+.callno {
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.25rem;
+}
+
+h1, h2, h3 { line-height: 1.25; font-weight: 700; }
+h1 { font-size: 1.875rem; margin: 0; }
+h2 { font-size: 1.3125rem; margin: 2rem 0 0.5rem; }
+h3 { font-size: 1.0625rem; margin: 1.5rem 0 0.25rem; }
+p, ul, ol, dl, table { margin: 0 0 1rem; }
+li { margin: 0.25rem 0; }
+li > ul, li > ol { margin: 0.25rem 0 0; }
+
+.lede { font-size: 1.1875rem; color: var(--ink); }
+.small { font-size: 0.9375rem; color: var(--ink-soft); }
+
+ol.steps { padding-left: 1.5rem; }
+ol.steps > li { margin: 0.75rem 0; padding-left: 0.25rem; }
+
+.menu-path {
+  font-family: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+}
+
+/* Lists of index cards on the home page */
+.index { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+.index a {
+  display: block;
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--cloth);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  color: var(--ink);
+  text-decoration: none;
+}
+.index a:hover { border-color: var(--cloth); }
+.index strong { display: block; color: var(--cloth); }
+.index span { font-size: 0.9375rem; color: var(--ink-soft); }
+
+/* References on the science page */
+.refs { padding-left: 0; list-style: none; }
+.refs li {
+  padding-left: 1.5rem;
+  text-indent: -1.5rem;
+  margin: 0.6rem 0;
+  font-size: 0.9375rem;
+}
+
+table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.5rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
+th { font-family: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif; font-weight: 700; }
+.table-scroll { overflow-x: auto; }
+
+/* Photo placeholders and draft notes. */
+.todo {
+  background: var(--todo-bg);
+  color: var(--todo-ink);
+  border: 2px dashed var(--todo-rule);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-size: 0.9375rem;
+}
+.todo strong { letter-spacing: 0.04em; }
+figure { margin: 1rem 0 1.5rem; }
+figure.photo .todo {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+}
+figcaption { font-size: 0.875rem; color: var(--ink-soft); margin-top: 0.4rem; }
+
+.draft-banner {
+  border: 2px solid var(--rule-red);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.site-footer {
+  padding: 0 0 2.5rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+.site-footer p { margin: 0.25rem 0; }
+.site-footer a { color: var(--ink-soft); }
+.todo-inline {
+  background: var(--todo-bg);
+  color: var(--todo-ink);
+  border: 1px dashed var(--todo-rule);
+  border-radius: 3px;
+  padding: 0 0.3em;
+  font-family: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif;
+  font-size: 0.9375em;
+}
+
+/* Long links and paths wrap instead of widening the page on small phones. */
+a, code { overflow-wrap: anywhere; }
