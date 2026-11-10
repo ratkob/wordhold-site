@@ -1,15 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wordhold</title>
-  <meta name="description" content="Wordhold teaches you the words you looked up in your own books: Kindle, Kobo or paper.">
+  <title>Wordhold: learn the words from your own books</title>
+  <meta name="description" content="Wordhold is an iPhone app for readers. Snap your Kobo or Kindle word list, or a page of a paper book, and learn each word in the sentence where you met it.">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
 </head>
-<body>
+<body class="home">
+  <a class="skip" href="#main">Skip to the page</a>
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap wrap-wide">
       <a class="brand" href="">Wordhold</a>
       <nav aria-label="Site">
         <ul>
@@ -23,34 +27,201 @@
       </nav>
     </div>
   </header>
-  <main class="wrap">
-    <article class="card">
-      <div class="card-head">
-        <p class="callno">OW · 000</p>
-        <h1>Learn the words from your own books</h1>
+
+  <main id="main">
+    <section class="hero wrap wrap-wide" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="callno">An iPhone app for readers</p>
+        <h1 id="hero-title">Learn the words from your <span class="inked">own books</span></h1>
+        <p class="lede">Snap the word list on your Kobo or Kindle, or a page of a paper book. Wordhold keeps each word with the sentence where you met it, and brings it back a few cards a day until it’s yours.</p>
+        <p class="status"><strong>Coming soon to the App Store.</strong> Free during the launch, with every feature.</p>
+        <ul class="facts" aria-label="In short">
+          <li>No account</li>
+          <li>No ads</li>
+          <li>Photos read on your iPhone</li>
+          <li>Your words in your own iCloud</li>
+        </ul>
       </div>
 
-      <p class="lede">Wordhold is an iPhone app for readers. Photograph your Kindle or Kobo word list, snap a page of a paper book, type a word or ask Siri. Then learn those words a few cards a day, each one in the sentence where you met it.</p>
-      <p><strong>Coming soon to the App Store.</strong></p>
+      <div class="try" id="try" aria-labelledby="try-title">
+        <div class="try-head">
+          <h2 id="try-title" class="label">Try it here</h2>
+          <ol class="try-steps" aria-label="Steps">
+            <li data-step="1" aria-current="step">Tap a word</li>
+            <li data-step="2">Keep it</li>
+            <li data-step="3">Recall it</li>
+          </ol>
+        </div>
 
-      <h2>How-to guides</h2>
-      <ul class="index">
-        <li><a href="guides/kindle-vocabulary-builder/"><strong>How to find and use Kindle Vocabulary Builder</strong><span>Where your Kindle keeps every word you looked up, and how to use it.</span></a></li>
-        <li><a href="guides/kobo-my-words/"><strong>How to switch on and use Kobo My Words</strong><span>Turn on Kobo's saved-words list and find it again.</span></a></li>
+        <!-- Step 1 and 2: the book page and the word's catalogue card -->
+        <div class="try-page" data-panel="page">
+          <p class="running-head">The Great Gatsby</p>
+          <p class="passage">Now he was a <button type="button" class="w" disabled data-word="sturdy">sturdy</button> straw-haired man of thirty, with a rather hard mouth and a <button type="button" class="w" disabled data-word="supercilious">supercilious</button> manner. Two shining <button type="button" class="w" disabled data-word="arrogant">arrogant</button> eyes had established <button type="button" class="w" disabled data-word="dominance">dominance</button> over his face and gave him the appearance of always leaning aggressively forward.</p>
+          <p class="try-hint" data-hint>Tap one of the underlined words, as you would on your e-reader.</p>
+          <noscript><p class="try-hint"><strong>supercilious</strong> <em>adjective</em>: having or showing arrogant superiority to and disdain of those one views as unworthy. Turn on JavaScript to tap the words yourself.</p></noscript>
+
+          <div class="lookup" data-lookup hidden tabindex="-1" role="group" aria-labelledby="lookup-word">
+            <p class="lookup-word"><span id="lookup-word" data-f="word"></span> <span class="ipa" data-f="ipa"></span></p>
+            <p class="pos" data-f="pos"></p>
+            <p class="meaning" data-f="meaning"></p>
+            <p class="small sense-note" data-f="senseNote"></p>
+            <div class="actions">
+              <button type="button" class="btn btn-ink" data-act="keep">Keep this word</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: the recall card, as the app shows it a few days later -->
+        <div class="try-card" data-panel="card" hidden tabindex="-1" role="group" aria-labelledby="card-word">
+          <p class="running-head">The Great Gatsby</p>
+          <div class="ribbon" data-ribbon hidden><span data-f="ribbon"></span></div>
+          <p class="card-word" id="card-word" data-f="word"></p>
+          <p class="card-sentence" data-f="sentence"></p>
+          <div data-front>
+            <p class="small">Do you remember what it means here?</p>
+            <div class="actions">
+              <button type="button" class="btn btn-ink" data-act="reveal">Show meaning</button>
+            </div>
+          </div>
+          <div data-back hidden>
+            <p class="asterism" aria-hidden="true">⁂</p>
+            <p class="meaning" data-f="meaning" data-reveal-focus tabindex="-1"></p>
+            <p class="second"><em data-f="example"></em> <span class="credit" data-f="exampleCredit"></span></p>
+            <div class="actions" data-grade>
+              <button type="button" class="btn btn-card" data-act="again">Didn’t know</button>
+              <button type="button" class="btn btn-ink" data-act="good">Knew it</button>
+            </div>
+            <p class="small" data-after hidden tabindex="-1"></p>
+          </div>
+          <p class="try-reset"><button type="button" class="textlink" data-act="reset">Try another word</button></p>
+        </div>
+        <p class="sr-only" aria-live="polite" data-live></p>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="ways-title">
+      <div class="wrap wrap-wide ways">
+        <div class="ways-text">
+          <h2 id="ways-title">Three ways to get your words in</h2>
+          <p>Most e-readers quietly keep a list of every word you looked up. Wordhold reads that list from a photo, so there’s nothing to plug in or export.</p>
+          <ol class="ways-list">
+            <li>
+              <span class="num" aria-hidden="true">01</span>
+              <div>
+                <h3>Kobo: My Words</h3>
+                <p>Open My Words on your Kobo and photograph the list, page by page. Wordhold reads it on your iPhone and asks you to check it. <a href="guides/kobo-my-words/">How to switch on My Words</a></p>
+              </div>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">02</span>
+              <div>
+                <h3>Kindle: Vocabulary Builder</h3>
+                <p>Photograph your Vocabulary Builder list the same way. <a href="guides/kindle-vocabulary-builder/">Where Kindle keeps your words</a></p>
+              </div>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">03</span>
+              <div>
+                <h3>A paper book</h3>
+                <p>Snap the page and tap the word you want. Its sentence comes with it.</p>
+              </div>
+            </li>
+          </ol>
+          <p class="small">Or type a word, share text from another app, or ask Siri: “Add a word to Wordhold”. Photos are read on your iPhone and never uploaded.</p>
+        </div>
+        <figure class="ways-photo">
+          <img src="guides/kobo-my-words/photo-3.jpg" alt="A Kobo's Activity screen on the My Words tab: two columns of saved words such as ditherers, ashen, paragon and exulting." width="850" height="1000" loading="lazy" decoding="async">
+          <figcaption>A real Kobo My Words list: 23 pages of words, waiting.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap wrap-wide features" aria-labelledby="features-title">
+      <h2 id="features-title">What’s in the app</h2>
+      <div class="bento">
+        <article class="tile tile-methods">
+          <h3>Seven ways to practise</h3>
+          <p>Every review starts with recall: the word in your sentence, a moment to remember, then the meaning. When a word is ready for more, the others mix in.</p>
+          <ol class="methods">
+            <li><span>Recall</span><span class="small">see it, remember it, check</span></li>
+            <li><span>Fill the gap</span><span class="small">your sentence, one word missing</span></li>
+            <li><span>Match</span><span class="small">words to their meanings</span></li>
+            <li><span>Spell what you hear</span><span class="small">with its pronunciation</span></li>
+            <li><span>Swap in a synonym</span><span class="small">from the dictionary’s own</span></li>
+            <li><span>Find the opposite</span><span class="small">where the word has one</span></li>
+            <li><span>Word roots</span><span class="small">the parts that build it</span></li>
+          </ol>
+        </article>
+        <article class="tile tile-fsrs">
+          <h3>Spaced repetition</h3>
+          <p>FSRS, a modern scheduler, brings each word back when it’s due. The red ribbon on the card tells you when.</p>
+        </article>
+        <article class="tile tile-sense">
+          <h3>The meaning your sentence uses</h3>
+          <p>On iPhones with Apple Intelligence, the phone’s own model reads your sentence and picks the right meaning from the dictionary. Nothing is sent anywhere, and you can always pick another.</p>
+        </article>
+        <article class="tile tile-dict">
+          <h3>A dictionary that lives in the app</h3>
+          <p>Clear meanings from Open English WordNet, the pronunciation, and a second example from a classic book. No internet needed to look a word up.</p>
+        </article>
+        <article class="tile tile-yours">
+          <h3>Your words, always yours</h3>
+          <p>No account. Your words are kept on your iPhone and in your own iCloud, so a new iPhone gets them too. Export them to a spreadsheet or an Anki deck any time.</p>
+        </article>
+      </div>
+      <ul class="index-list">
+        <li><strong>Book by book.</strong> See the words each book gave you.</li>
+        <li><strong>On your lock screen.</strong> A word from your books every time you glance at your phone, and on your home screen too.</li>
+        <li><strong>Streaks without the guilt.</strong> Daily and weekly streaks, with freezes for busy days, and a gentle reminder at the time you usually read.</li>
+        <li><strong>Siri and sharing.</strong> Save a word without opening the app.</li>
       </ul>
+    </section>
 
-      <h2>About the app</h2>
+    <section class="band" aria-labelledby="themes-title">
+      <div class="wrap wrap-wide themes">
+        <div class="themes-text">
+          <h2 id="themes-title">Pick the page you read on</h2>
+          <p>Every screen in Wordhold sits on its theme: plain paper that follows your phone’s light or dark mode, Night, Sepia, or one of twelve public-domain paintings under a cover dark enough to read on.</p>
+          <fieldset class="theme-pick">
+            <legend class="label">Theme</legend>
+            <label><input type="radio" name="theme" value="paper" checked> Paper</label>
+            <label><input type="radio" name="theme" value="night"> Night</label>
+            <label><input type="radio" name="theme" value="sepia"> Sepia</label>
+            <label><input type="radio" name="theme" value="painting" data-name="painting"> A painting</label>
+          </fieldset>
+          <p class="small theme-credit" data-credit hidden>Camille Corot, <em>A Woman Reading</em>, 1869–70 · The Metropolitan Museum of Art (CC0). One of the twelve paintings in the app.</p>
+        </div>
+        <div class="theme-preview tp-paper" data-preview>
+          <p class="sr-only" data-preview-name>A word page in the Paper theme:</p>
+          <img class="tp-art" data-src="images/corot-woman-reading.jpg" alt="" width="480" height="1040" decoding="async">
+          <div class="tp-page">
+            <p class="running-head">Jane Eyre</p>
+            <p class="tp-word">ensnare</p>
+            <p class="tp-sub"><em>verb</em> · ɛnˈsnɛə</p>
+            <p class="tp-sentence">“I am no bird; and no net <strong>ensnares</strong> me: I am a free human being with an independent will.”</p>
+            <p class="tp-meaning">take or catch as if in a snare or trap</p>
+            <p class="tp-credit">Charlotte Brontë, <em>Jane Eyre</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap wrap-wide more" aria-labelledby="more-title">
+      <h2 id="more-title">Read more</h2>
       <ul class="index">
-        <li><a href="science/"><strong>The science</strong><span>The studies behind spaced repetition, active recall and learning words in context.</span></a></li>
+        <li><a href="science/"><strong>The science</strong><span>The studies behind spaced repetition, active recall and learning words in context, and what we don’t claim.</span></a></li>
+        <li><a href="guides/"><strong>Guides</strong><span>Find the word list your Kindle or Kobo already keeps, with or without Wordhold.</span></a></li>
         <li><a href="support/"><strong>Support</strong><span>Questions, sync, exporting and how to reach us.</span></a></li>
         <li><a href="privacy/"><strong>Privacy policy</strong><span>No accounts, no ads, nothing sold. What leaves your phone and why.</span></a></li>
-        <li><a href="attribution/"><strong>Sources and licences</strong><span>The dictionary, word lists and fonts the app is built on.</span></a></li>
+        <li><a href="attribution/"><strong>Sources and licences</strong><span>The dictionary, word lists, paintings and fonts the app is built on.</span></a></li>
       </ul>
-    </article>
+    </section>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <p>Wordhold is an iPhone app that teaches you the words you looked up in your own books.</p>
+    <div class="wrap wrap-wide">
+      <p>Wordhold is an iPhone app that teaches you the words you looked up in your own books. Coming soon to the App Store.</p>
+      <p>The passage on this page is from <em>The Great Gatsby</em> (1925, public domain); meanings are from Open English WordNet (CC BY 4.0).</p>
       <p>Not affiliated with Amazon or Rakuten Kobo. Kindle is a trademark of Amazon.com, Inc. Kobo is a trademark of Rakuten Kobo Inc.</p>
       <p><a href="privacy/">Privacy</a> · <a href="support/">Support</a> · <a href="attribution/">Sources and licences</a></p>
     </div>

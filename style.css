@@ -13,6 +13,10 @@
   --todo-bg: #fff4c7;
   --todo-ink: #5a4500;
   --todo-rule: #c9a227;
+  --ribbon: #9c3b2b;
+  --on-ribbon: #fbf9f3;
+  --ink-btn: #1c2434;
+  --on-ink-btn: #fbf9f3;
   color-scheme: light dark;
 }
 
@@ -28,6 +32,10 @@
     --todo-bg: #3a3214;
     --todo-ink: #f2dc8a;
     --todo-rule: #a88a2a;
+    --ribbon: #e58a75;
+    --on-ribbon: #1c1c1b;
+    --ink-btn: #e6e7ea;
+    --on-ink-btn: #1c1c1b;
   }
 }
 
