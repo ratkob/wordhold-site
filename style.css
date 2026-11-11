@@ -10,9 +10,6 @@
   --rule: #c9c6bd;
   --rule-red: #b5544a;
   --cloth: #2f5e44;
-  --todo-bg: #fff4c7;
-  --todo-ink: #5a4500;
-  --todo-rule: #c9a227;
   --ribbon: #9c3b2b;
   --on-ribbon: #fbf9f3;
   --ink-btn: #1c2434;
@@ -29,9 +26,6 @@
     --rule: #4a4a46;
     --rule-red: #d98378;
     --cloth: #78b08c;
-    --todo-bg: #3a3214;
-    --todo-ink: #f2dc8a;
-    --todo-rule: #a88a2a;
     --ribbon: #e58a75;
     --on-ribbon: #1c1c1b;
     --ink-btn: #e6e7ea;
@@ -56,8 +50,7 @@ body {
 nav,
 .site-footer,
 .callno,
-figcaption,
-.todo {
+figcaption {
   font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 }
 
@@ -128,7 +121,7 @@ h1, h2, h3 { line-height: 1.25; font-weight: 700; }
 h1 { font-size: 1.875rem; margin: 0; }
 h2 { font-size: 1.3125rem; margin: 2rem 0 0.5rem; }
 h3 { font-size: 1.0625rem; margin: 1.5rem 0 0.25rem; }
-p, ul, ol, dl, table { margin: 0 0 1rem; }
+p, ul, ol, dl { margin: 0 0 1rem; }
 li { margin: 0.25rem 0; }
 li > ul, li > ol { margin: 0.25rem 0 0; }
 
@@ -168,40 +161,8 @@ ol.steps > li { margin: 0.75rem 0; padding-left: 0.25rem; }
   font-size: 0.9375rem;
 }
 
-table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
-th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.5rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
-th { font-family: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif; font-weight: 700; }
-.table-scroll { overflow-x: auto; }
-
-/* Photo placeholders and draft notes. */
-.todo {
-  background: var(--todo-bg);
-  color: var(--todo-ink);
-  border: 2px dashed var(--todo-rule);
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  margin: 1rem 0;
-  font-size: 0.9375rem;
-}
-.todo strong { letter-spacing: 0.04em; }
 figure { margin: 1rem 0 1.5rem; }
-figure.photo .todo {
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0;
-}
 figcaption { font-size: 0.875rem; color: var(--ink-soft); margin-top: 0.4rem; }
-
-.draft-banner {
-  border: 2px solid var(--rule-red);
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  margin: 0 0 1.5rem;
-  font-size: 0.9375rem;
-}
 
 .site-footer {
   padding: 0 0 2.5rem;
@@ -210,15 +171,6 @@ figcaption { font-size: 0.875rem; color: var(--ink-soft); margin-top: 0.4rem; }
 }
 .site-footer p { margin: 0.25rem 0; }
 .site-footer a { color: var(--ink-soft); }
-.todo-inline {
-  background: var(--todo-bg);
-  color: var(--todo-ink);
-  border: 1px dashed var(--todo-rule);
-  border-radius: 3px;
-  padding: 0 0.3em;
-  font-family: "Atkinson Hyperlegible Next", -apple-system, system-ui, sans-serif;
-  font-size: 0.9375em;
-}
 
 /* Long links and paths wrap instead of widening the page on small phones. */
 a, code { overflow-wrap: anywhere; }
