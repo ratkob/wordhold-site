@@ -38,7 +38,21 @@
       <h2>Who we are</h2>
       <p>Wordhold is made by Ratko Bozovic, an independent developer ("we", "us"). We are responsible for the personal data described here (the "controller"). Contact: <a href="mailto:wordhold@ratko.biz">wordhold@ratko.biz</a></p>
 
+      <h2 id="android">Wordhold for Android</h2>
+      <p>Everything on this page about what Wordhold does with your words, photos and usage data also holds on Android, except where this section says otherwise. The iPhone-only parts (iCloud, Siri, Apple's tracking question, Apple Intelligence, screen recordings) do not apply to Android.</p>
+      <ul>
+        <li><strong>Your words stay on your phone.</strong> Words, books, sentences and practice history are stored in the app. We don't receive them. If backup is on in your phone's settings, Android's own Auto Backup keeps a copy in your Google account (under Google's privacy policy, not ours) and restores it on a new phone; the dictionary that comes with the app is not backed up. Deleting the app removes your words from the phone.</li>
+        <li><strong>Photos are read on your phone.</strong> Text recognition is Google's ML Kit, which runs on the phone. The photo is thrown away; only the words you choose, and the sentence they came from, are kept. Nothing is uploaded. Wordhold asks for the camera only when you open the scanner.</li>
+        <li><strong>Whether you are 18 or over.</strong> The topics with curse words and sexual vocabulary are shown only to adults. If you ask to see them, Google Play's own sheet asks whether to share your age range with Wordhold; Wordhold only checks that it is 18 or more and keeps a single "yes" file on the phone, which Android does not back up or move to a new phone. Nothing about your age is sent to any service.</li>
+        <li><strong>No screen recording.</strong> Android sends no screen recordings, ever.</li>
+        <li><strong>Usage data, only after your yes.</strong> The first time you open Wordhold it asks "Help improve Wordhold?". Until you say yes, none of the services below is even started. A yes sends counts and codes (never a word, sentence, book title or photo) to PostHog, Google Firebase Analytics and Crashlytics, and Singular, tied to the random install ID in Settings › About. Because Android has no separate tracking question, a yes also lets Singular and Firebase use Google's advertising ID and Google Play's install referrer to tell which of our ads brought you here. "Don't share" stops all of it, and you can change your answer in Settings › Privacy. The sections below describe each service.</li>
+        <li><strong>Book covers.</strong> Cover look-ups go to Open Library as described below.</li>
+        <li><strong>No purchases yet.</strong> Wordhold for Android is free and has no purchases or subscriptions. RevenueCat is not used on Android.</li>
+        <li><strong>Delete your data.</strong> There are no accounts. In the app, <span class="menu-path">Settings › Delete all words</span> and <span class="menu-path">Settings › Start from scratch</span> work as described under "Your choices and rights"; to remove what the services hold, email us your Install ID. The page <a href="../delete-data/">Delete my data</a> covers both phones.</li>
+      </ul>
+
       <h2>What stays on your iPhone</h2>
+      <p><em>iPhone. See the Android section above for Android.</em></p>
       <ul>
         <li><strong>Your words, books, sentences and practice history.</strong> Stored in the app on your phone. We don't receive them, except that the optional first-day screen recording can show your word lists (see <a href="#usage-data">below</a>).</li>
         <li><strong>A spare copy of your words.</strong> Wordhold keeps its own copy of your words, with their books and practice history, in a file on your phone, so it can offer them back if iCloud removes them (for example when you sign out of iCloud or switch it off for Wordhold). The copy stays on your phone and is deleted with the app.</li>
@@ -142,7 +156,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>Wordhold is an iPhone app that teaches you the words you looked up in your own books.</p>
+      <p>Wordhold is an app for iPhone and Android that teaches you the words you looked up in your own books.</p>
       <p>Not affiliated with Amazon or Rakuten Kobo. Kindle is a trademark of Amazon.com, Inc. Kobo is a trademark of Rakuten Kobo Inc.</p>
       <p><a href="../privacy/">Privacy</a> · <a href="../terms/">Terms</a> · <a href="../delete-data/">Delete my data</a> · <a href="../support/">Support</a> · <a href="../attribution/">Sources and licences</a></p>
     </div>
